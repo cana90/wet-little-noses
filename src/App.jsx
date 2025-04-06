@@ -1,36 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './utils/i18n'; // This will be created
+
+// Layout components
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+
+// Pages - We'll implement these
+import Home from './pages/Home';
+import Dogs from './pages/Dogs';
+import About from './pages/About';
+import Donate from './pages/Donate';
 
 function App() {
-  const [count, setCount] = useState(0)
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
-      <div className="flex space-x-4 mb-8">
-        <a href="https://vite.dev" target="_blank" className="transform hover:scale-110 transition-transform">
-          <img src={viteLogo} className="logo w-24 h-24" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" className="transform hover:scale-110 transition-transform">
-          <img src={reactLogo} className="logo w-24 h-24" alt="React logo" />
-        </a>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dogs" element={<Dogs />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/donate" element={<Donate />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-      <h1 className="text-4xl font-bold text-blue-600 mb-6">Vite + React</h1>
-      <div className="card text-center">
-        <button 
-          onClick={() => setCount((count) => count + 1)}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-        >
-          count is {count}
-        </button>
-        <p className="mt-4 text-gray-600">
-          Edit <code className="bg-gray-200 px-1 rounded">src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs mt-8 text-gray-500 text-sm">
-        Click on the Vite andasdasdasdd React logos to learn more
-      </p>
-    </div>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

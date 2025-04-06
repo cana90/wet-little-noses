@@ -1,0 +1,43 @@
+{
+    "navigation": {
+      "home": "Acasă",
+      "dogs": "Cunoaște Câinii",
+      "about": "Despre Noi",
+      "donate": "Cum Poți Ajuta"
+    },
+    "home": {
+      "title": "Oferă unui câine dragostea pe care o merită",
+      "subtitle": "Ajută-ne să sprijinim câinii noștri prin adopție virtuală sau prin donarea lucrurilor de care au nevoie pentru o viață fericită și sănătoasă.",
+      "adoptButton": "Adoptă Virtual",
+      "donateButton": "Donează Produse",
+      "featuredDogs": "Câini care au nevoie de sprijinul tău",
+      "needs": "Necesită",
+      "sponsorButton": "Sponsorizează",
+      "donateItemsButton": "Donează Produse",
+      "seeAllDogs": "Vezi toți câinii",
+      "howItWorks": "Cum poți ajuta",
+      "virtualAdoption": "Adopție Virtuală",
+      "virtualAdoptionDesc": "Sponsorizează lunar un câine pentru a ajuta cu îngrijirea și nevoile sale.",
+      "donateSupplies": "Donează Produse",
+      "donateSuppliesDesc": "Cumpără articole specifice din lista de dorințe a fiecărui câine.",
+      "shareStories": "Distribuie Poveștile",
+      "shareStoriesDesc": "Ajută la răspândirea informațiilor despre câinii noștri și călătoriile lor către case permanente."
+    },
+    "dogs": {
+      "pageTitle": "Cunoaște Câinii Noștri",
+      "filterAll": "Toți Câinii",
+      "filterPuppies": "Pui",
+      "filterAdults": "Adulți",
+      "filterSeniors": "Seniori",
+      "noResults": "Nu s-au găsit câini care să corespundă acestui filtru.",
+      "sponsor": "Sponsorizează",
+      "donateItems": "Donează Produse",
+      "needs": "Necesită"
+    },
+    "footer": {
+      "description": "Oferim cămine temporare pline de iubire pentru câinii care au nevoie.",
+      "quickLinks": "Linkuri Rapide",
+      "contact": "Contactează-ne",
+      "rights": "Toate drepturile rezervate."
+    }
+  }

@@ -1,0 +1,43 @@
+{
+    "navigation": {
+      "home": "Startseite",
+      "dogs": "Unsere Hunde",
+      "about": "Über Uns",
+      "donate": "So Können Sie Helfen"
+    },
+    "home": {
+      "title": "Geben Sie einem Hund die Liebe, die er verdient",
+      "subtitle": "Helfen Sie, unsere Pflegehunde durch virtuelle Adoption oder Spenden für Dinge zu unterstützen, die sie für ein glückliches, gesundes Leben benötigen.",
+      "adoptButton": "Virtuell Adoptieren",
+      "donateButton": "Zubehör Spenden",
+      "featuredDogs": "Hunde, die Ihre Unterstützung brauchen",
+      "needs": "Benötigt",
+      "sponsorButton": "Sponsern",
+      "donateItemsButton": "Artikel Spenden",
+      "seeAllDogs": "Alle Hunde ansehen",
+      "howItWorks": "Wie Sie helfen können",
+      "virtualAdoption": "Virtuelle Adoption",
+      "virtualAdoptionDesc": "Sponsern Sie einen Hund monatlich, um bei seiner laufenden Pflege und seinen Bedürfnissen zu helfen.",
+      "donateSupplies": "Zubehör Spenden",
+      "donateSuppliesDesc": "Kaufen Sie bestimmte Artikel aus der Wunschliste jedes Hundes.",
+      "shareStories": "Geschichten Teilen",
+      "shareStoriesDesc": "Helfen Sie, das Wort über unsere Hunde und ihre Reise zu einem dauerhaften Zuhause zu verbreiten."
+    },
+    "dogs": {
+      "pageTitle": "Lernen Sie Unsere Hunde Kennen",
+      "filterAll": "Alle Hunde",
+      "filterPuppies": "Welpen",
+      "filterAdults": "Erwachsene",
+      "filterSeniors": "Senioren",
+      "noResults": "Keine Hunde gefunden, die diesem Filter entsprechen.",
+      "sponsor": "Sponsern",
+      "donateItems": "Artikel Spenden",
+      "needs": "Benötigt"
+    },
+    "footer": {
+      "description": "Wir bieten liebevolle temporäre Heime für bedürftige Hunde.",
+      "quickLinks": "Schnelllinks",
+      "contact": "Kontakt",
+      "rights": "Alle Rechte vorbehalten."
+    }
+  }
