@@ -14,7 +14,11 @@ const Dogs = () => {
       image: "https://placedog.net/400/300?id=1",
       age: "3 years",
       breed: "Golden Retriever Mix",
-      needs: "Heart medication, special food",
+      items: [
+        { id: 101, name: "Heart medication", price: 45, purchased: false },
+        { id: 102, name: "Special food", price: 30, purchased: true },
+        { id: 103, name: "Orthopedic bed", price: 55, purchased: false }
+      ],
       category: "adult"
     },
     {
@@ -23,7 +27,11 @@ const Dogs = () => {
       image: "https://placedog.net/400/300?id=2",
       age: "5 months",
       breed: "Border Collie Mix",
-      needs: "Puppy food, training toys",
+      items: [
+        { id: 201, name: "Puppy food", price: 25, purchased: false },
+        { id: 202, name: "Training toys", price: 15, purchased: false },
+        { id: 203, name: "Puppy pads", price: 10, purchased: true }
+      ],
       category: "puppy"
     },
     {
@@ -32,7 +40,11 @@ const Dogs = () => {
       image: "https://placedog.net/400/300?id=3",
       age: "7 years",
       breed: "German Shepherd",
-      needs: "Joint supplements, senior food",
+      items: [
+        { id: 301, name: "Joint supplements", price: 35, purchased: false },
+        { id: 302, name: "Senior food", price: 40, purchased: false },
+        { id: 303, name: "Heated pad", price: 30, purchased: true }
+      ],
       category: "senior"
     },
     {
@@ -41,7 +53,11 @@ const Dogs = () => {
       image: "https://placedog.net/400/300?id=4",
       age: "2 years",
       breed: "Labrador Mix",
-      needs: "Regular food, toys",
+      items: [
+        { id: 401, name: "Regular food", price: 30, purchased: false },
+        { id: 402, name: "Toys", price: 20, purchased: false },
+        { id: 403, name: "Leash", price: 15, purchased: true }
+      ],
       category: "adult"
     },
     {
@@ -50,7 +66,11 @@ const Dogs = () => {
       image: "https://placedog.net/400/300?id=5",
       age: "4 months",
       breed: "Poodle Mix",
-      needs: "Puppy food, blankets",
+      items: [
+        { id: 501, name: "Puppy food", price: 25, purchased: true },
+        { id: 502, name: "Blankets", price: 20, purchased: false },
+        { id: 503, name: "Chew toys", price: 10, purchased: false }
+      ],
       category: "puppy"
     },
     {
@@ -59,7 +79,11 @@ const Dogs = () => {
       image: "https://placedog.net/400/300?id=6",
       age: "8 years",
       breed: "Boxer",
-      needs: "Orthopedic bed, joint supplements",
+      items: [
+        { id: 601, name: "Orthopedic bed", price: 55, purchased: false },
+        { id: 602, name: "Joint supplements", price: 35, purchased: true },
+        { id: 603, name: "Senior food", price: 40, purchased: false }
+      ],
       category: "senior"
     }
   ];

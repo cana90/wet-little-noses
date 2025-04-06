@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import DogCard from '../components/dogs/DogCard';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -13,7 +14,12 @@ const Home = () => {
       image: "https://placedog.net/400/300?id=1",
       age: "3 years",
       breed: "Golden Retriever Mix",
-      needs: "Heart medication, special food"
+      items: [
+        { id: 101, name: "Heart medication", price: 45, purchased: false },
+        { id: 102, name: "Special food", price: 30, purchased: true },
+        { id: 103, name: "Orthopedic bed", price: 55, purchased: false }
+      ],
+      category: "adult"
     },
     {
       id: 2,
@@ -21,7 +27,12 @@ const Home = () => {
       image: "https://placedog.net/400/300?id=2",
       age: "5 months",
       breed: "Border Collie Mix",
-      needs: "Puppy food, training toys"
+      items: [
+        { id: 201, name: "Puppy food", price: 25, purchased: false },
+        { id: 202, name: "Training toys", price: 15, purchased: false },
+        { id: 203, name: "Puppy pads", price: 10, purchased: true }
+      ],
+      category: "puppy"
     },
     {
       id: 3,
@@ -29,7 +40,12 @@ const Home = () => {
       image: "https://placedog.net/400/300?id=3",
       age: "7 years",
       breed: "German Shepherd",
-      needs: "Joint supplements, senior food"
+      items: [
+        { id: 301, name: "Joint supplements", price: 35, purchased: false },
+        { id: 302, name: "Senior food", price: 40, purchased: false },
+        { id: 303, name: "Heated pad", price: 30, purchased: true }
+      ],
+      category: "senior"
     }
   ];
 
@@ -59,22 +75,7 @@ const Home = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredDogs.map((dog) => (
-            <div key={dog.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src={dog.image} alt={dog.name} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="font-bold text-xl text-amber-800 mb-2">{dog.name}</h3>
-                <p className="text-amber-700 mb-1">{dog.age} • {dog.breed}</p>
-                <p className="text-gray-600 mb-4">{t('home.needs')}: {dog.needs}</p>
-                <div className="flex justify-between">
-                  <Link to={`/dogs/${dog.id}`} className="bg-amber-100 hover:bg-amber-200 text-amber-800 py-2 px-4 rounded font-medium">
-                    {t('home.sponsorButton')} {dog.name}
-                  </Link>
-                  <Link to={`/donate?dog=${dog.id}`} className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded font-medium">
-                    {t('home.donateItemsButton')}
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <DogCard key={dog.id} dog={dog} />
           ))}
         </div>
         
