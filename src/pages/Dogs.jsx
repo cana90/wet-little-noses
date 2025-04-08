@@ -2,6 +2,18 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import DogCard from '../components/dogs/DogCard';
 
+// Material UI imports
+import { 
+  Container, 
+  Typography, 
+  Box, 
+  Grid, 
+  ToggleButtonGroup, 
+  ToggleButton,
+  Alert
+} from '@mui/material';
+import PetsIcon from '@mui/icons-material/Pets';
+
 const Dogs = () => {
   const { t } = useTranslation();
   const [filter, setFilter] = useState('all');
@@ -93,64 +105,60 @@ const Dogs = () => {
     ? allDogs 
     : allDogs.filter(dog => dog.category === filter);
 
+  const handleFilterChange = (event, newFilter) => {
+    if (newFilter !== null) {
+      setFilter(newFilter);
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-amber-800 text-center mb-8">
+    <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Typography variant="h3" component="h1" color="primary" align="center" gutterBottom>
         {t('dogs.pageTitle')}
-      </h1>
+      </Typography>
       
       {/* Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-2 mb-8">
-        <button 
-          onClick={() => setFilter('all')}
-          className={`px-4 py-2 rounded-full ${filter === 'all' 
-            ? 'bg-amber-600 text-white' 
-            : 'bg-amber-100 text-amber-800'}`}
+      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 6 }}>
+        <ToggleButtonGroup
+          value={filter}
+          exclusive
+          onChange={handleFilterChange}
+          aria-label="dog category filter"
+          color="primary"
         >
-          {t('dogs.filterAll')}
-        </button>
-        <button 
-          onClick={() => setFilter('puppy')}
-          className={`px-4 py-2 rounded-full ${filter === 'puppy' 
-            ? 'bg-amber-600 text-white' 
-            : 'bg-amber-100 text-amber-800'}`}
-        >
-          {t('dogs.filterPuppies')}
-        </button>
-        <button 
-          onClick={() => setFilter('adult')}
-          className={`px-4 py-2 rounded-full ${filter === 'adult' 
-            ? 'bg-amber-600 text-white' 
-            : 'bg-amber-100 text-amber-800'}`}
-        >
-          {t('dogs.filterAdults')}
-        </button>
-        <button 
-          onClick={() => setFilter('senior')}
-          className={`px-4 py-2 rounded-full ${filter === 'senior' 
-            ? 'bg-amber-600 text-white' 
-            : 'bg-amber-100 text-amber-800'}`}
-        >
-          {t('dogs.filterSeniors')}
-        </button>
-      </div>
+          <ToggleButton value="all" aria-label="all dogs">
+            {t('dogs.filterAll')}
+          </ToggleButton>
+          <ToggleButton value="puppy" aria-label="puppies">
+            {t('dogs.filterPuppies')}
+          </ToggleButton>
+          <ToggleButton value="adult" aria-label="adult dogs">
+            {t('dogs.filterAdults')}
+          </ToggleButton>
+          <ToggleButton value="senior" aria-label="senior dogs">
+            {t('dogs.filterSeniors')}
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
       
       {/* Dog Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Grid container spacing={4}>
         {filteredDogs.map(dog => (
-          <DogCard key={dog.id} dog={dog} />
+          <Grid item key={dog.id} xs={12} sm={6} md={4}>
+            <DogCard dog={dog} />
+          </Grid>
         ))}
-      </div>
+      </Grid>
       
       {/* No Results Message */}
       {filteredDogs.length === 0 && (
-        <div className="text-center py-8">
-          <p className="text-lg text-gray-600">
+        <Box sx={{ py: 4 }}>
+          <Alert severity="info" icon={<PetsIcon />}>
             {t('dogs.noResults')}
-          </p>
-        </div>
+          </Alert>
+        </Box>
       )}
-    </div>
+    </Container>
   );
 };
 

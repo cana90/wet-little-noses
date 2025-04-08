@@ -1,36 +1,36 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { ToggleButtonGroup, ToggleButton } from '@mui/material';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    // Store language preference in localStorage
-    localStorage.setItem('preferredLanguage', lng);
+  const changeLanguage = (event, newLang) => {
+    if (newLang !== null) {
+      i18n.changeLanguage(newLang);
+      localStorage.setItem('preferredLanguage', newLang);
+    }
   };
 
   return (
-    <div className="flex space-x-2">
-      <button 
-        onClick={() => changeLanguage('en')} 
-        className={`px-2 py-1 text-sm rounded ${i18n.language === 'en' ? 'bg-amber-600 text-white' : 'bg-amber-100 text-amber-800'}`}
-      >
+    <ToggleButtonGroup
+      value={i18n.language}
+      exclusive
+      onChange={changeLanguage}
+      aria-label="language"
+      size="small"
+      sx={{ ml: 2 }}
+    >
+      <ToggleButton value="en" aria-label="English">
         EN
-      </button>
-      <button 
-        onClick={() => changeLanguage('ro')} 
-        className={`px-2 py-1 text-sm rounded ${i18n.language === 'ro' ? 'bg-amber-600 text-white' : 'bg-amber-100 text-amber-800'}`}
-      >
+      </ToggleButton>
+      <ToggleButton value="ro" aria-label="Romanian">
         RO
-      </button>
-      <button 
-        onClick={() => changeLanguage('de')} 
-        className={`px-2 py-1 text-sm rounded ${i18n.language === 'de' ? 'bg-amber-600 text-white' : 'bg-amber-100 text-amber-800'}`}
-      >
+      </ToggleButton>
+      <ToggleButton value="de" aria-label="German">
         DE
-      </button>
-    </div>
+      </ToggleButton>
+    </ToggleButtonGroup>
   );
 };
 

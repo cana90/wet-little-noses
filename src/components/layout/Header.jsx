@@ -3,62 +3,121 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
+// Material UI imports
+import { 
+  AppBar, 
+  Toolbar, 
+  Typography, 
+  Button, 
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Box,
+  Container
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import PetsIcon from '@mui/icons-material/Pets';
+
 const Header = () => {
   const { t } = useTranslation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const navItems = [
+    { text: t('navigation.home'), path: '/' },
+    { text: t('navigation.dogs'), path: '/dogs' },
+    { text: t('navigation.about'), path: '/about' },
+    { text: t('navigation.donate'), path: '/donate' }
+  ];
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        Wet Little Noses
+      </Typography>
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item.text} component={Link} to={item.path} sx={{ textAlign: 'center' }}>
+            <ListItemText primary={item.text} />
+          </ListItem>
+        ))}
+        <ListItem sx={{ justifyContent: 'center' }}>
+          <LanguageSwitcher />
+        </ListItem>
+      </List>
+    </Box>
+  );
 
   return (
-    <header className="bg-amber-800 text-amber-50">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          {/* Logo/Site Name */}
-          <Link to="/" className="text-xl font-bold flex items-center space-x-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8 4.03-8 9-8 9 3.582 9 8z" />
-            </svg>
-            <span>Wet Little Noses</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="hover:text-amber-200">{t('navigation.home')}</Link>
-            <Link to="/dogs" className="hover:text-amber-200">{t('navigation.dogs')}</Link>
-            <Link to="/about" className="hover:text-amber-200">{t('navigation.about')}</Link>
-            <Link to="/donate" className="hover:text-amber-200">{t('navigation.donate')}</Link>
-            <LanguageSwitcher />
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-amber-50" 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <nav className="md:hidden py-4 flex flex-col space-y-3">
-            <Link to="/" className="hover:text-amber-200">{t('navigation.home')}</Link>
-            <Link to="/dogs" className="hover:text-amber-200">{t('navigation.dogs')}</Link>
-            <Link to="/about" className="hover:text-amber-200">{t('navigation.about')}</Link>
-            <Link to="/donate" className="hover:text-amber-200">{t('navigation.donate')}</Link>
-            <div className="pt-2">
+    <>
+      <AppBar position="static" sx={{ backgroundColor: '#008080' }}>
+        <Container maxWidth="lg">
+          <Toolbar>
+            <PetsIcon sx={{ mr: 1 }} />
+            <Typography
+              variant="h6"
+              component={Link}
+              to="/"
+              sx={{ 
+                flexGrow: 1, 
+                textDecoration: 'none', 
+                color: 'inherit',
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
+              Wet Little Noses
+            </Typography>
+            
+            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+              {navItems.map((item) => (
+                <Button 
+                  key={item.text}
+                  component={Link}
+                  to={item.path}
+                  color="inherit"
+                >
+                  {item.text}
+                </Button>
+              ))}
               <LanguageSwitcher />
-            </div>
-          </nav>
-        )}
-      </div>
-    </header>
+            </Box>
+            
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="end"
+              onClick={handleDrawerToggle}
+              sx={{ display: { md: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      
+      <Box component="nav">
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better mobile performance
+          }}
+          sx={{
+            display: { xs: 'block', md: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+    </>
   );
 };
 
