@@ -55,14 +55,6 @@ const Footer = () => {
                 color="primary.light" 
                 underline="hover"
               >
-                {t('navigation.dogs')}
-              </MuiLink>
-              <MuiLink 
-                component={Link} 
-                to="/about" 
-                color="primary.light" 
-                underline="hover"
-              >
                 {t('navigation.about')}
               </MuiLink>
               <MuiLink 

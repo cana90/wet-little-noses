@@ -1,7 +1,6 @@
 {
     "navigation": {
       "home": "Home",
-      "dogs": "Meet the Dogs",
       "about": "About Us",
       "donate": "Ways to Help"
     },
@@ -23,21 +22,14 @@
       "shareStories": "Share Stories",
       "shareStoriesDesc": "Help spread the word about our dogs and their journeys to forever homes."
     },
-    "dogs": {
-      "pageTitle": "Meet Our Dogs",
-      "filterAll": "All Dogs",
-      "filterPuppies": "Puppies",
-      "filterAdults": "Adults",
-      "filterSeniors": "Seniors",
-      "noResults": "No dogs found matching this filter.",
-      "sponsor": "Sponsor",
-      "donateItems": "Donate Items",
-      "needs": "Needs"
-    },
     "footer": {
       "description": "Providing loving temporary homes for dogs in need.",
       "quickLinks": "Quick Links",
       "contact": "Contact Us",
       "rights": "All rights reserved."
-    }
+    },
+    "common": {
+    "readMore": "Read more",
+    "showLess": "Show less"
+  }
   }

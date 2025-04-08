@@ -1,7 +1,6 @@
 {
     "navigation": {
       "home": "Acasă",
-      "dogs": "Cunoaște Câinii",
       "about": "Despre Noi",
       "donate": "Cum Poți Ajuta"
     },
@@ -23,21 +22,14 @@
       "shareStories": "Distribuie Poveștile",
       "shareStoriesDesc": "Ajută la răspândirea informațiilor despre câinii noștri și călătoriile lor către case permanente."
     },
-    "dogs": {
-      "pageTitle": "Cunoaște Câinii Noștri",
-      "filterAll": "Toți Câinii",
-      "filterPuppies": "Pui",
-      "filterAdults": "Adulți",
-      "filterSeniors": "Seniori",
-      "noResults": "Nu s-au găsit câini care să corespundă acestui filtru.",
-      "sponsor": "Sponsorizează",
-      "donateItems": "Donează Produse",
-      "needs": "Necesită"
-    },
     "footer": {
       "description": "Oferim cămine temporare pline de iubire pentru câinii care au nevoie.",
       "quickLinks": "Linkuri Rapide",
       "contact": "Contactează-ne",
       "rights": "Toate drepturile rezervate."
-    }
+    },
+    "common": {
+    "readMore": "Mai mult",
+    "showLess": "Mai putin"
+  }
   }

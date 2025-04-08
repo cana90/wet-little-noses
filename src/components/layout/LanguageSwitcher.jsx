@@ -19,7 +19,12 @@ const LanguageSwitcher = () => {
       onChange={changeLanguage}
       aria-label="language"
       size="small"
-      sx={{ ml: 2 }}
+      sx={{ 
+        ml: 2,
+        '& .MuiToggleButton-root': {
+          color: 'white'
+        }
+      }}
     >
       <ToggleButton value="en" aria-label="English">
         EN

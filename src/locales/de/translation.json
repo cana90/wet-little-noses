@@ -1,7 +1,6 @@
 {
     "navigation": {
       "home": "Startseite",
-      "dogs": "Unsere Hunde",
       "about": "Über Uns",
       "donate": "So Können Sie Helfen"
     },
@@ -23,21 +22,14 @@
       "shareStories": "Geschichten Teilen",
       "shareStoriesDesc": "Helfen Sie, das Wort über unsere Hunde und ihre Reise zu einem dauerhaften Zuhause zu verbreiten."
     },
-    "dogs": {
-      "pageTitle": "Lernen Sie Unsere Hunde Kennen",
-      "filterAll": "Alle Hunde",
-      "filterPuppies": "Welpen",
-      "filterAdults": "Erwachsene",
-      "filterSeniors": "Senioren",
-      "noResults": "Keine Hunde gefunden, die diesem Filter entsprechen.",
-      "sponsor": "Sponsern",
-      "donateItems": "Artikel Spenden",
-      "needs": "Benötigt"
-    },
     "footer": {
       "description": "Wir bieten liebevolle temporäre Heime für bedürftige Hunde.",
       "quickLinks": "Schnelllinks",
       "contact": "Kontakt",
       "rights": "Alle Rechte vorbehalten."
-    }
+    },
+    "common": {
+    "readMore": "Mehr",
+    "showLess": "Weniger"
+  }
   }

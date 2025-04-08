@@ -12,7 +12,6 @@ import Footer from './components/layout/Footer';
 
 // Pages
 import Home from './pages/Home';
-import Dogs from './pages/Dogs';
 import About from './pages/About';
 import Donate from './pages/Donate';
 
@@ -54,7 +53,6 @@ function App() {
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/dogs" element={<Dogs />} />
               <Route path="/about" element={<About />} />
               <Route path="/donate" element={<Donate />} />
             </Routes>
