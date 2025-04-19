@@ -1,35 +1,46 @@
 {
-    "navigation": {
-      "home": "Home",
-      "about": "About Us",
-      "donate": "Ways to Help"
-    },
-    "home": {
-      "title": "Give a Dog the Love They Deserve",
-      "subtitle": "Help support our foster dogs through virtual adoption or by donating supplies they need for a happy, healthy life.",
-      "adoptButton": "Adopt Virtually",
-      "donateButton": "Donate Supplies",
-      "featuredDogs": "Dogs Needing Your Support",
-      "needs": "Needs",
-      "sponsorButton": "Sponsor",
-      "donateItemsButton": "Donate Items",
-      "seeAllDogs": "See All Dogs",
-      "howItWorks": "How You Can Help",
-      "virtualAdoption": "Virtual Adoption",
-      "virtualAdoptionDesc": "Sponsor a dog monthly to help with their ongoing care and needs.",
-      "donateSupplies": "Donate Supplies",
-      "donateSuppliesDesc": "Purchase specific items from each dog's wishlist that they need.",
-      "shareStories": "Share Stories",
-      "shareStoriesDesc": "Help spread the word about our dogs and their journeys to forever homes."
-    },
-    "footer": {
-      "description": "Providing loving temporary homes for dogs in need.",
-      "quickLinks": "Quick Links",
-      "contact": "Contact Us",
-      "rights": "All rights reserved."
-    },
-    "common": {
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "donate": "Ways to Help",
+    "dogs": "Dogs"
+  },
+  "home": {
+    "title": "Give a Dog the Love They Deserve",
+    "subtitle": "Help support our foster dogs through virtual adoption or by donating supplies they need for a happy, healthy life.",
+    "adoptButton": "Adopt Virtually",
+    "donateButton": "Donate Supplies",
+    "featuredDogs": "Dogs Needing Your Support",
+    "needs": "Needs",
+    "sponsorButton": "Sponsor",
+    "donateItemsButton": "Donate Items",
+    "seeAllDogs": "See All Dogs",
+    "howItWorks": "How You Can Help",
+    "virtualAdoption": "Virtual Adoption",
+    "virtualAdoptionDesc": "Sponsor a dog monthly to help with their ongoing care and needs.",
+    "donateSupplies": "Donate Supplies",
+    "donateSuppliesDesc": "Purchase specific items from each dog's wishlist that they need.",
+    "shareStories": "Share Stories",
+    "shareStoriesDesc": "Help spread the word about our dogs and their journeys to forever homes."
+  },
+  "dogs": {
+    "filterAll": "All Dogs",
+    "filterPuppies": "Puppies",
+    "filterAdults": "Adults",
+    "filterSeniors": "Seniors",
+    "noResults": "No dogs match your current filter. Please try another category.",
+    "needs": "Needs",
+    "sponsor": "Sponsor",
+    "donateItems": "Donate Items"
+  },
+  "footer": {
+    "description": "Providing loving temporary homes for dogs in need.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "rights": "All rights reserved."
+  },
+  "common": {
     "readMore": "Read more",
     "showLess": "Show less"
   }
-  }
+}

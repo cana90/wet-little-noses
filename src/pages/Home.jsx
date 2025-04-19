@@ -143,11 +143,14 @@ const Home = () => {
                 variant="contained" 
                 size="large"
                 startIcon={<PetsIcon />}
-                color="primary"
+                color="secondary"
                 onClick={() => window.scrollTo({
                   top: document.getElementById('dogs-section').offsetTop - 80,
                   behavior: 'smooth'
                 })}
+                sx={{
+                  color: 'primary.main'
+                }}
               >
                 {t('home.adoptButton')}
               </Button>
@@ -166,13 +169,13 @@ const Home = () => {
         </Container>
       </Box>
       
-      {/* Dogs Section with Filtering - MOVED UP BEFORE "HOW IT WORKS" */}
+      {/* Dogs Section with Filtering */}
       <Box id="dogs-section" sx={{ py: 8 }}>
         <Container maxWidth="lg">
           <Typography 
             variant="h4" 
             component="h2" 
-            color="black" 
+            color="primary" 
             align="center" 
             gutterBottom
           >
@@ -206,10 +209,8 @@ const Home = () => {
           {/* Dogs Grid */}
           <Grid container spacing={4}>
             {filteredDogs.map((dog) => (
-              <Grid item key={dog.id} xs={12} sm={6} md={4} sx={{ display: 'flex' }}>
-                <Box sx={{ width: '100%', display: 'flex' }}>
-                  <DogCard dog={dog} />
-                </Box>
+              <Grid item key={dog.id} xs={12} sm={6} md={4}>
+                <DogCard dog={dog} />
               </Grid>
             ))}
           </Grid>
@@ -225,7 +226,7 @@ const Home = () => {
         </Container>
       </Box>
       
-      {/* How It Works - MOVED DOWN AFTER DOGS SECTION */}
+      {/* How It Works Section */}
       <Box sx={{ bgcolor: 'primary.light', py: 8 }}>
         <Container maxWidth="lg">
           <Typography 
