@@ -1,0 +1,30 @@
+type Dog @model @auth(rules: [
+  { allow: public, operations: [read] },
+  { allow: groups, groups: ["Admin"], operations: [create, update, delete, read] }
+]) {
+  id: ID!
+  name: String!
+  image: String
+  age: String
+  breed: String
+  description: String
+  category: DogCategory
+  items: [DogItem] @hasMany
+}
+
+type DogItem @model @auth(rules: [
+  { allow: public, operations: [read] },
+  { allow: groups, groups: ["Admin"], operations: [create, update, delete, read] }
+]) {
+  id: ID!
+  name: String!
+  price: Float!
+  purchased: Boolean!
+  dogID: ID! @index(name: "byDog")
+}
+
+enum DogCategory {
+  PUPPY
+  ADULT
+  SENIOR
+}

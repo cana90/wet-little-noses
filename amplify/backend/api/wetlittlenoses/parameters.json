@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "wetlittlenoses",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authwetlittlenoses991d1721",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

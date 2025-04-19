@@ -1,0 +1,32 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wetlittlenoses-dev-44b7c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::482717261808:role/amplify-wetlittlenoses-dev-44b7c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::482717261808:role/amplify-wetlittlenoses-dev-44b7c-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-wetlittlenoses-dev-44b7c-deployment",
+      "UnauthRoleName": "amplify-wetlittlenoses-dev-44b7c-unauthRole",
+      "StackName": "amplify-wetlittlenoses-dev-44b7c",
+      "StackId": "arn:aws:cloudformation:eu-central-1:482717261808:stack/amplify-wetlittlenoses-dev-44b7c/d34e1710-1d43-11f0-a963-02295926a7ef",
+      "AmplifyAppId": "d6thfzj40lkt3"
+    },
+    "categories": {
+      "auth": {
+        "wetlittlenoses991d1721": {}
+      },
+      "function": {
+        "S3Trigger04411fbb": {
+          "deploymentBucketName": "amplify-wetlittlenoses-dev-44b7c-deployment",
+          "s3Key": "amplify-builds/S3Trigger04411fbb-47374952435156416736-build.zip"
+        }
+      },
+      "storage": {
+        "s32a1f98f0": {}
+      },
+      "api": {
+        "wetlittlenoses": {}
+      }
+    }
+  }
+}

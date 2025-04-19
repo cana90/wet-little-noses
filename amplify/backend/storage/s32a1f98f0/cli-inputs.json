@@ -1,0 +1,16 @@
+{
+  "resourceName": "s32a1f98f0",
+  "policyUUID": "2a1f98f0",
+  "bucketName": "wetlittlenoses95016fd1a55b41c3912ea1ebc269c695",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "S3Trigger04411fbb",
+  "groupAccess": {}
+}

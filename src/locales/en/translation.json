@@ -21,7 +21,11 @@
     "donateSupplies": "Donate Supplies",
     "donateSuppliesDesc": "Purchase specific items from each dog's wishlist that they need.",
     "shareStories": "Share Stories",
-    "shareStoriesDesc": "Help spread the word about our dogs and their journeys to forever homes."
+    "shareStoriesDesc": "Help spread the word about our dogs and their journeys to forever homes.",
+    "gridView": "Grid View",
+    "carouselView": "Carousel View",
+    "nextButton": "Next",
+    "backButton": "Back"
   },
   "dogs": {
     "filterAll": "All Dogs",
