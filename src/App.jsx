@@ -86,12 +86,12 @@ const App = () => {
   const dogs = [
     {
       id: 1,
-      name: "Buddy",
-      age: "3 years",
-      breed: "Golden Retriever Mix",
+      name: "Scotty",
+      age: "2 years",
+      breed: "Mixed Breed",
       sex: "male",
-      image: "https://placedog.net/400/300?id=1",
-      description: "Buddy is a gentle soul who loves belly rubs and afternoon naps in the sun. He's great with children and other dogs, making him the perfect family companion."
+      image: "/assets/cats/Scotty.jpg",
+      description: "Scotty is a playful and affectionate dog who loves to be around people. He enjoys long walks and is great with kids."
     },
     {
       id: 2,
