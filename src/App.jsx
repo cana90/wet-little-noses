@@ -86,12 +86,12 @@ const App = () => {
   const dogs = [
     {
       id: 1,
-      name: "Buddy",
-      age: "3 years",
-      breed: "Golden Retriever Mix",
+      name: "Scotty",
+      age: "2 years",
+      breed: "Mixed Breed",
       sex: "male",
-      image: "https://placedog.net/400/300?id=1",
-      description: "Buddy is a gentle soul who loves belly rubs and afternoon naps in the sun. He's great with children and other dogs, making him the perfect family companion."
+      image: "/assets/cats/Scotty.jpg",
+      description: "Scotty is a playful and affectionate dog who loves to be around people. He enjoys long walks and is great with kids."
     },
     {
       id: 2,
@@ -200,7 +200,7 @@ const App = () => {
   const currentAnimals = animalType === 'dogs' ? dogs : cats;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1E8' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#fcedd2' }}>
       {/* Language Selector - Top Left */}
       <div className="absolute top-4 left-4 z-10">
         <div className="flex space-x-1">
@@ -226,7 +226,7 @@ const App = () => {
       {/* Header with Logo */}
       <header className="text-center py-8 px-4 pt-16">
         <div className="mb-6">
-          <div className="w-48 h-48 mx-auto mb-4 rounded-3xl overflow-hidden shadow-lg" style={{ backgroundColor: '#F5F1E8' }}>
+          <div className="w-48 h-48 mx-auto mb-4 rounded-3xl overflow-hidden" style={{ backgroundColor: '#F5F1E8' }}>
             <img 
               src="https://i.imgur.com/QmkG7oz.png?v=1"
               alt="Wet Little Noses Logo"
