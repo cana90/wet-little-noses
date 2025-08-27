@@ -90,111 +90,67 @@ const App = () => {
       age: "2 years",
       breed: "Mixed Breed",
       sex: "male",
-      image: "/assets/cats/Scotty.jpg",
-      description: "Scotty is a playful and affectionate dog who loves to be around people. He enjoys long walks and is great with kids."
+      image: "/assets/dogs/Scotty.jpg",
+      description: "Scotty is a playful and dog who loves to be around people. He enjoys long walks and is great with kids."
     },
     {
       id: 2,
-      name: "Luna",
-      age: "8 months",
-      breed: "Border Collie Mix",
+      name: "Linda",
+      age: "2.5 years",
+      breed: "Mix Breed",
       sex: "female",
-      image: "https://placedog.net/400/300?id=2",
+      image: "/assets/dogs/Linda.jpg",
       description: "Luna is an energetic puppy who's always ready for an adventure. She's incredibly smart and loves learning new tricks."
-    },
-    {
-      id: 3,
-      name: "Max",
-      age: "7 years",
-      breed: "German Shepherd",
-      sex: "male",
-      image: "https://placedog.net/400/300?id=3",
-      description: "Max is a distinguished senior gentleman with so much love to give. Despite his age, he still enjoys short walks and loves to be around people."
-    },
-    {
-      id: 4,
-      name: "Bella",
-      age: "2 years",
-      breed: "Mixed Breed",
-      sex: "female",
-      image: "https://placedog.net/400/300?id=4",
-      description: "Bella is a sweet and affectionate dog who bonds deeply with her humans. She's housetrained and has a calm demeanor."
-    },
-    {
-      id: 5,
-      name: "Charlie",
-      age: "5 years",
-      breed: "Labrador Mix",
-      sex: "male",
-      image: "https://placedog.net/400/300?id=5",
-      description: "Charlie is the definition of a loyal companion. He loves water, enjoys swimming, and has endless energy for outdoor activities."
-    },
-    {
-      id: 6,
-      name: "Daisy",
-      age: "1 year",
-      breed: "Poodle Mix",
-      sex: "female",
-      image: "https://placedog.net/400/300?id=6",
-      description: "Daisy is a curious young dog with a heart full of love. She's still learning about the world and would benefit from a patient family."
     }
   ];
 
   const cats = [
     {
       id: 7,
-      name: "Whiskers",
-      age: "4 years",
-      breed: "Maine Coon Mix",
+      name: "Portocala",
+      age: "3 months",
+      breed: "Domestic Shorthair",
       sex: "male",
-      image: "https://placekitten.com/400/300?id=1",
+      image: "/assets/cats/Portocala.jpg",
       description: "Whiskers is a majestic and gentle giant who loves to watch birds from the window. He's calm, affectionate, and perfect for a quiet home."
     },
     {
       id: 8,
-      name: "Mittens",
-      age: "6 months",
+      name: "Doro",
+      age: "4 weeks",
       breed: "Domestic Shorthair",
       sex: "female",
-      image: "https://placekitten.com/400/300?id=2",
+      image: "/assets/cats/Doro.jpg",
       description: "Mittens is a playful kitten who loves chasing toy mice and cuddling in warm spots. She's social and would do well with other cats."
     },
     {
       id: 9,
-      name: "Shadow",
-      age: "8 years",
-      breed: "Russian Blue Mix",
+      name: "Ramis",
+      age: "4 weeks",
+      breed: "Domestic Shorthair",
       sex: "male",
-      image: "https://placekitten.com/400/300?id=3",
+      image: "/assets/cats/Rami.jpg",
       description: "Shadow is a sophisticated senior cat who enjoys quiet companionship. He loves gentle pets and would thrive in a peaceful environment."
     },
     {
       id: 10,
-      name: "Princess",
-      age: "3 years",
-      breed: "Persian Mix",
+      name: "Patty",
+      age: "4 weeks",
+      breed: "Domestic Shorthair",
       sex: "female",
-      image: "https://placekitten.com/400/300?id=4",
+      image: "/assets/cats/Patty.jpg",
       description: "Princess is as elegant as her name suggests. She enjoys being pampered and loves to lounge in sunny spots around the house."
     },
     {
       id: 11,
-      name: "Oliver",
-      age: "2 years",
-      breed: "Tabby Mix",
-      sex: "male",
-      image: "https://placekitten.com/400/300?id=5",
+      name: "Siana",
+      age: "3 months",
+      breed: "Domestic Shorthair",
+      sex: "female",
+      image: "/assets/cats/Siana.jpg",
       description: "Oliver is an adventurous cat who loves exploring and climbing. He's friendly, curious, and would make a wonderful addition to an active household."
     },
-    {
-      id: 12,
-      name: "Luna",
-      age: "1 year",
-      breed: "Calico",
-      sex: "female",
-      image: "https://placekitten.com/400/300?id=6",
-      description: "Luna is a sweet young cat with beautiful markings. She's gentle, loves to purr, and gets along well with both humans and other pets."
-    }
+    
   ];
 
   const currentAnimals = animalType === 'dogs' ? dogs : cats;
