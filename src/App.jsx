@@ -200,7 +200,7 @@ const App = () => {
   const currentAnimals = animalType === 'dogs' ? dogs : cats;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1E8' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#fcedd2' }}>
       {/* Language Selector - Top Left */}
       <div className="absolute top-4 left-4 z-10">
         <div className="flex space-x-1">
@@ -226,7 +226,7 @@ const App = () => {
       {/* Header with Logo */}
       <header className="text-center py-8 px-4 pt-16">
         <div className="mb-6">
-          <div className="w-48 h-48 mx-auto mb-4 rounded-3xl overflow-hidden shadow-lg" style={{ backgroundColor: '#F5F1E8' }}>
+          <div className="w-48 h-48 mx-auto mb-4 rounded-3xl overflow-hidden" style={{ backgroundColor: '#F5F1E8' }}>
             <img 
               src="https://i.imgur.com/QmkG7oz.png?v=1"
               alt="Wet Little Noses Logo"
