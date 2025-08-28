@@ -243,11 +243,11 @@ const App = () => {
       {/* Animals Grid */}
       <main className="px-4 pb-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center items-start">
             {currentAnimals.map((animal) => (
               <div 
                 key={animal.id}
-                className="rounded-2xl shadow-lg overflow-hidden w-full max-w-sm relative"
+                className="rounded-2xl shadow-lg overflow-hidden w-full max-w-sm relative h-full flex flex-col"
                 style={{ 
                   backgroundColor: 'white',
                   border: '4px solid #8B4513',
@@ -283,7 +283,7 @@ const App = () => {
                   <img 
                     src={animal.image} 
                     alt={animal.name}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-56 object-cover"
                     onError={(e) => {
                       e.target.src = animalType === 'dogs' ? "https://placedog.net/400/300?random" : "https://placekitten.com/400/300?random";
                     }}
@@ -297,7 +297,7 @@ const App = () => {
                 </div>
 
                 {/* Animal Info */}
-                <div className="p-4 relative" style={{ zIndex: 2 }}>
+                <div className="p-4 relative flex-1 flex flex-col" style={{ zIndex: 2 }}>
                   <h2 className="text-xl font-bold mb-3" style={{ color: '#2F4A3B' }}>
                     {animal.name}
                   </h2>
@@ -319,7 +319,7 @@ const App = () => {
                   </div>
 
                   {/* Description Section */}
-                  <div className="border-t pt-3" style={{ borderColor: '#F5F1E8' }}>
+                  <div className="border-t pt-3 flex-1" style={{ borderColor: '#F5F1E8' }}>
                     <button
                       onClick={() => toggleCard(animal.id)}
                       className="flex items-center justify-between w-full text-left focus:outline-none"
@@ -346,7 +346,7 @@ const App = () => {
             
             {/* Donation Tile */}
             <div 
-              className="rounded-2xl shadow-lg overflow-hidden w-full max-w-sm relative"
+              className="rounded-2xl shadow-lg overflow-hidden w-full max-w-sm relative h-full flex flex-col"
               style={{ 
                 backgroundColor: 'white', 
                 border: '4px dashed #D2691E',
@@ -372,7 +372,7 @@ const App = () => {
                 }}
               />
               
-              <div className="p-6 text-center relative" style={{ zIndex: 2 }}>
+              <div className="p-6 text-center relative flex-1 flex flex-col justify-center" style={{ zIndex: 2 }}>
                 <div className="mb-4">
                   <div className="w-16 h-16 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: '#2F4A3B' }}>
                     <CreditCard className="w-8 h-8 text-white" />
