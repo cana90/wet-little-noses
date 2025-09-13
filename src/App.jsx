@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
-import { Heart, ChevronDown, ChevronUp, Calendar, User, Palette, CreditCard, Building2 } from 'lucide-react';
+import { Heart, Calendar, User, Palette, CreditCard, Building2 } from 'lucide-react';
 
 const App = () => {
-  const [expandedCards, setExpandedCards] = useState({});
   const [currentLanguage, setCurrentLanguage] = useState('en');
   const [animalType, setAnimalType] = useState('dogs');
 
   const translations = {
     en: {
       title: "Wet Little Noses",
-      subtitle: "Thank you for visiting our foster animals!",
-      description: "Each animal here is looking for their forever home. Your support helps us care for them until they find their perfect family.",
-      about: "About",
+      mainText: "**Wet Little Noses** is an association run by Elena, a one-woman powerhouse who dedicates her life to helping animals in need.",
+      elenasWork: "Elena collects donations for the Reșița public animal shelter, but her work goes far beyond that. She rescues injured and abandoned animals from the streets, responds to emergencies, nurses them back to health, and provides them with a loving foster home until they're ready for adoption.",
+      personalTouch: "Over the years, Elena's incredible work has touched our hearts deeply. We thought our party would be the perfect opportunity to raise awareness about her mission, help collect some desperately needed funds, and who knows – maybe help one of these adorable furballs listed below find their forever home with you!",
+      animalInfo: "All the animals you see here are currently safe and loved in Elena's foster care. Each comes fully vaccinated with all necessary adoption papers ready to go.",
+      wantToHelp: "Want to help?",
+      helpInstructions: "You can leave a donation in the box by the candy bar, or follow the simple instructions below for other ways to contribute.",
+      thankYou: "Every little bit makes a huge difference in these animals' lives. Thank you for caring!",
+      psNote: "If you want to know more about a particular animal, contact Calin directly.",
       age: "Age",
       sex: "Sex", 
       breed: "Breed",
@@ -22,16 +26,21 @@ const App = () => {
       donateDesc: "Your donation goes directly to food, medical care, and shelter for our foster animals.",
       bankDetails: "Bank Transfer",
       paypalDetails: "PayPal",
-      thankYou: "Thank you for supporting our foster animals!",
+      footerThankYou: "Thank you for supporting our foster animals!",
       footerText: "Every donation and share helps these beautiful souls find their forever homes.",
       dogs: "Dogs",
       cats: "Cats"
     },
     ro: {
       title: "Năsuțuri Umede", 
-      subtitle: "Mulțumim că vizitați animalele noastre din plasament!",
-      description: "Fiecare animal de aici își caută căminul pentru totdeauna. Sprijinul vostru ne ajută să avem grijă de ei până își găsesc familia perfectă.",
-      about: "Despre",
+      mainText: "**Năsuțuri Umede** este o asociație condusă de Elena, o forță de unul singur care își dedică viața ajutorării animalelor în nevoie.",
+      elenasWork: "Elena colectează donații pentru adăpostul public de animale din Reșița, dar munca ei depășește cu mult acest lucru. Ea salvează animale rănite și abandonate de pe străzi, răspunde la urgențe, le îngrijește până se vindecă și le oferă o casă de plasament plină de dragoste până sunt gata pentru adopție.",
+      personalTouch: "De-a lungul anilor, munca incredibilă a Elenei ne-a atins inimile profund. Am gândit că petrecerea noastră ar fi oportunitatea perfectă să creștem gradul de conștientizare asupra misiunii ei, să ajutăm la colectarea unor fonduri dispereat de necesare și cine știe – poate să ajutăm una dintre aceste mingi de blană adorabile de mai jos să își găsească căminul pentru totdeauna cu voi!",
+      animalInfo: "Toate animalele pe care le vedeți aici sunt în siguranță și iubite în grija de plasament a Elenei. Fiecare vine complet vaccinat cu toate actele de adopție necesare gata.",
+      wantToHelp: "Vrei să ajuți?",
+      helpInstructions: "Poți lăsa o donație în cutia de lângă candy bar sau urmează instrucțiunile simple de mai jos pentru alte modalități de a contribui.",
+      thankYou: "Fiecare cent contează și face o diferență enormă în viețile acestor animale. Mulțumim că îți pasă!",
+      psNote: "Dacă vrei să știi mai multe despre un anumit animal, contactează-l direct pe Calin.",
       age: "Vârsta",
       sex: "Sexul",
       breed: "Rasa", 
@@ -42,16 +51,21 @@ const App = () => {
       donateDesc: "Donația ta merge direct către hrană, îngrijire medicală și adăpost pentru animalele noastre.",
       bankDetails: "Transfer Bancar",
       paypalDetails: "PayPal", 
-      thankYou: "Mulțumim că sprijiniți animalele noastre din plasament!",
+      footerThankYou: "Mulțumim că sprijiniți animalele noastre din plasament!",
       footerText: "Fiecare donație și distribuire ajută aceste suflete frumoase să își găsească căminele pentru totdeauna.",
       dogs: "Câini",
       cats: "Pisici"
     },
     de: {
       title: "Feuchte Kleine Nasen",
-      subtitle: "Danke, dass Sie unsere Pflegetiere besuchen!",
-      description: "Jedes Tier hier sucht sein Zuhause für immer. Ihre Unterstützung hilft uns, sie zu versorgen, bis sie ihre perfekte Familie finden.",
-      about: "Über",
+      mainText: "**Feuchte Kleine Nasen** ist ein Verein, der von Elena geleitet wird, einer Ein-Frau-Macht, die ihr Leben der Hilfe für Tiere in Not widmet.",
+      elenasWork: "Elena sammelt Spenden für das öffentliche Tierheim in Reșița, aber ihre Arbeit geht weit darüber hinaus. Sie rettet verletzte und verlassene Tiere von der Straße, reagiert auf Notfälle, pflegt sie gesund und bietet ihnen ein liebevolles Pflegeheim, bis sie zur Adoption bereit sind.",
+      personalTouch: "Über die Jahre hat uns Elenas unglaubliche Arbeit tief berührt. Wir dachten, unsere Party wäre die perfekte Gelegenheit, das Bewusstsein für ihre Mission zu schärfen, dringend benötigte Gelder zu sammeln und wer weiß – vielleicht einem dieser adorablen Fellknäuel unten ihr Zuhause für immer mit Ihnen zu finden!",
+      animalInfo: "Alle Tiere, die Sie hier sehen, sind sicher und geliebt in Elenas Pflege. Jedes kommt vollständig geimpft mit allen notwendigen Adoptionspapieren bereit.",
+      wantToHelp: "Möchten Sie helfen?",
+      helpInstructions: "Sie können eine Spende in der Box bei der Candy Bar hinterlassen oder den einfachen Anweisungen unten für andere Möglichkeiten zu helfen folgen.",
+      thankYou: "Jeder kleine Betrag macht einen großen Unterschied im Leben dieser Tiere. Danke, dass Ihnen das wichtig ist!",
+      psNote: "Wenn Sie mehr über ein bestimmtes Tier wissen möchten, kontaktieren Sie Calin direkt.",
       age: "Alter", 
       sex: "Geschlecht",
       breed: "Rasse",
@@ -62,7 +76,7 @@ const App = () => {
       donateDesc: "Ihre Spende geht direkt an Futter, medizinische Versorgung und Unterkunft für unsere Pflegetiere.",
       bankDetails: "Banküberweisung",
       paypalDetails: "PayPal",
-      thankYou: "Danke, dass Sie unsere Pflegetiere unterstützen!",
+      footerThankYou: "Danke, dass Sie unsere Pflegetiere unterstützen!",
       footerText: "Jede Spende und jedes Teilen hilft diesen schönen Seelen, ihr Zuhause für immer zu finden.",
       dogs: "Hunde",
       cats: "Katzen"
@@ -70,13 +84,6 @@ const App = () => {
   };
 
   const t = translations[currentLanguage];
-
-  const toggleCard = (dogId) => {
-    setExpandedCards(prev => ({
-      ...prev,
-      [dogId]: !prev[dogId]
-    }));
-  };
 
   const changeLanguage = (lang) => {
     setCurrentLanguage(lang);
@@ -264,12 +271,45 @@ const App = () => {
           </div>
         </div>
         
-        <p className="text-lg mb-4 font-medium" style={{ color: '#8B6914' }}>
-          {t.subtitle}
-        </p>
-        <p className="text-sm max-w-md mx-auto mb-6" style={{ color: '#2F4A3B' }}>
-          {t.description}
-        </p>
+        {/* New Wedding Party Description */}
+        <div className="max-w-2xl mx-auto text-left space-y-4 mb-8">
+          <p className="text-sm" style={{ color: '#2F4A3B' }}>
+            <strong>{t.mainText.replace(/\*\*(.*?)\*\*/g, '$1')}</strong>
+          </p>
+          
+          <p className="text-sm" style={{ color: '#2F4A3B' }}>
+            {t.elenasWork}
+          </p>
+
+          <div className="text-center">
+            <span className="text-lg">🐾</span>
+          </div>
+
+          <p className="text-sm" style={{ color: '#2F4A3B' }}>
+            {t.personalTouch}
+          </p>
+
+          <div className="text-center">
+            <span className="text-lg">🐾</span>
+          </div>
+
+          <p className="text-sm" style={{ color: '#2F4A3B' }}>
+            {t.animalInfo}
+          </p>
+
+          <div className="text-sm" style={{ color: '#2F4A3B' }}>
+            <p className="font-bold">{t.wantToHelp}</p>
+            <p>{t.helpInstructions}</p>
+          </div>
+
+          <p className="text-sm font-medium" style={{ color: '#8B6914' }}>
+            {t.thankYou} 🐾
+          </p>
+
+          <p className="text-xs italic" style={{ color: '#2F4A3B' }}>
+            <strong>PS:</strong> {t.psNote}
+          </p>
+        </div>
 
         {/* Dogs/Cats Toggle */}
         <div className="flex justify-center mb-4">
@@ -381,29 +421,6 @@ const App = () => {
                       <span style={{ color: '#2F4A3B' }}>{animal.breed}</span>
                     </div>
                   </div>
-
-                  {/* Description Section */}
-                  <div className="border-t pt-3 flex-1" style={{ borderColor: '#F5F1E8' }}>
-                    <button
-                      onClick={() => toggleCard(animal.id)}
-                      className="flex items-center justify-between w-full text-left focus:outline-none"
-                    >
-                      <span className="text-sm font-medium" style={{ color: '#2F4A3B' }}>
-                        {t.about} {animal.name}
-                      </span>
-                      {expandedCards[animal.id] ? (
-                        <ChevronUp className="w-4 h-4" style={{ color: '#D2691E' }} />
-                      ) : (
-                        <ChevronDown className="w-4 h-4" style={{ color: '#D2691E' }} />
-                      )}
-                    </button>
-                    
-                    {expandedCards[animal.id] && (
-                      <div className="mt-2 text-sm" style={{ color: '#2F4A3B' }}>
-                        {animal.description}
-                      </div>
-                    )}
-                  </div>
                 </div>
               </div>
             ))}
@@ -460,8 +477,9 @@ const App = () => {
                     </span>
                   </div>
                   <div className="text-xs" style={{ color: '#2F4A3B' }}>
-                    <p>IBAN: RO12 BANK 1234 5678 9012 3456</p>
-                    <p>Account: Wet Little Noses</p>
+                    <p>IBAN: AT263200000013245741</p>
+                    <p>Account: Calin Nastase</p>
+                    <p>Refference: Wet Little Noses</p>
                   </div>
                 </div>
                 
@@ -474,7 +492,8 @@ const App = () => {
                     </span>
                   </div>
                   <div className="text-xs" style={{ color: '#2F4A3B' }}>
-                    <p>donate@wetlittlenoses.ro</p>
+                    <p>calinn@duck.com</p>
+                    <p>Refference: Wet Little Noses</p>
                   </div>
                 </div>
               </div>
@@ -492,7 +511,7 @@ const App = () => {
             </div>
           </div>
           <p className="text-sm mb-2" style={{ color: '#2F4A3B' }}>
-            {t.thankYou}
+            {t.footerThankYou}
           </p>
           <p className="text-xs" style={{ color: '#8B6914' }}>
             {t.footerText}
