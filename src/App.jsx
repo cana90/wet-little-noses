@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Heart, Calendar, User, Palette, CreditCard, Building2 } from 'lucide-react';
 
 const App = () => {
   const [currentLanguage, setCurrentLanguage] = useState('en');
   const [animalType, setAnimalType] = useState('dogs');
+
+  // Load GoFundMe embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://www.gofundme.com/static/js/embed.js';
+    script.defer = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script if component unmounts
+      const existingScript = document.querySelector('script[src="https://www.gofundme.com/static/js/embed.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
 
   const translations = {
     en: {
@@ -477,9 +493,8 @@ const App = () => {
                     </span>
                   </div>
                   <div className="text-xs" style={{ color: '#2F4A3B' }}>
-                    <p>IBAN: AT263200000013245741</p>
-                    <p>Account: Calin Nastase</p>
-                    <p>Refference: Wet Little Noses</p>
+                    <p>IBAN: RO12 BANK 1234 5678 9012 3456</p>
+                    <p>Account: Wet Little Noses</p>
                   </div>
                 </div>
                 
@@ -492,8 +507,7 @@ const App = () => {
                     </span>
                   </div>
                   <div className="text-xs" style={{ color: '#2F4A3B' }}>
-                    <p>calinn@duck.com</p>
-                    <p>Refference: Wet Little Noses</p>
+                    <p>donate@wetlittlenoses.ro</p>
                   </div>
                 </div>
               </div>
