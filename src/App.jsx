@@ -5,243 +5,110 @@ const App = () => {
   const [currentLanguage, setCurrentLanguage] = useState('en');
   const [animalType, setAnimalType] = useState('dogs');
 
-  // Load GoFundMe embed script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.gofundme.com/static/js/embed.js';
-    script.defer = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script if component unmounts
-      const existingScript = document.querySelector('script[src="https://www.gofundme.com/static/js/embed.js"]');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
-
   const translations = {
     en: {
       title: "Wet Little Noses",
-      mainText: "**Wet Little Noses** is an association run by Elena, a one-woman powerhouse who dedicates her life to helping animals in need.",
-      elenasWork: "Elena collects donations for the Reșița public animal shelter, but her work goes far beyond that. She rescues injured and abandoned animals from the streets, responds to emergencies, nurses them back to health, and provides them with a loving foster home until they're ready for adoption.",
-      personalTouch: "Over the years, Elena's incredible work has touched our hearts deeply. We thought our party would be the perfect opportunity to raise awareness about her mission, help collect some desperately needed funds, and who knows – maybe help one of these adorable furballs listed below find their forever home with you!",
-      animalInfo: "All the animals you see here are currently safe and loved in Elena's foster care. Each comes fully vaccinated with all necessary adoption papers ready to go.",
       wantToHelp: "Want to help?",
-      helpInstructions: "You can leave a donation in the box by the candy bar, or follow the simple instructions below for other ways to contribute.",
-      thankYou: "Every little bit makes a huge difference in these animals' lives. Thank you for caring!",
-      psNote: "If you want to know more about a particular animal, contact Calin directly.",
+      helpInstructions:
+        "You can leave a donation in the box by the candy bar, or follow the simple instructions below for other ways to contribute.",
+      thankYou:
+        "Every little bit makes a huge difference in these animals' lives. Thank you for caring!",
+      psNote:
+        "If you want to know more about a particular animal, contact Calin directly.",
       age: "Age",
-      sex: "Sex", 
+      sex: "Sex",
       breed: "Breed",
       male: "Male",
       female: "Female",
       footerThankYou: "Thank you for supporting our foster animals!",
-      footerText: "Every donation and share helps these beautiful souls find their forever homes.",
+      footerText:
+        "Every donation and share helps these beautiful souls find their forever homes.",
       dogs: "Dogs",
-      cats: "Cats"
+      cats: "Cats",
+      donationText:
+        "Your donation directly supports food, medical care, and safe foster homes for dogs and cats in need. Every contribution makes a real difference!",
+      donationButton: "Donate Now"
     },
     ro: {
-      title: "Năsuțuri Umede", 
-      mainText: "**Năsuțuri Umede** este o asociație condusă de Elena, o forță de unul singur care își dedică viața ajutorării animalelor în nevoie.",
-      elenasWork: "Elena colectează donații pentru adăpostul public de animale din Reșița, dar munca ei depășește cu mult acest lucru. Ea salvează animale rănite și abandonate de pe străzi, răspunde la urgențe, le îngrijește până se vindecă și le oferă o casă de plasament plină de dragoste până sunt gata pentru adopție.",
-      personalTouch: "De-a lungul anilor, munca incredibilă a Elenei ne-a atins inimile profund. Am gândit că petrecerea noastră ar fi oportunitatea perfectă să creștem gradul de conștientizare asupra misiunii ei, să ajutăm la colectarea unor fonduri dispereat de necesare și cine știe – poate să ajutăm una dintre aceste mingi de blană adorabile de mai jos să își găsească căminul pentru totdeauna cu voi!",
-      animalInfo: "Toate animalele pe care le vedeți aici sunt în siguranță și iubite în grija de plasament a Elenei. Fiecare vine complet vaccinat cu toate actele de adopție necesare gata.",
+      title: "Năsucuri Umede",
       wantToHelp: "Vrei să ajuți?",
-      helpInstructions: "Poți lăsa o donație în cutia de lângă candy bar sau urmează instrucțiunile simple de mai jos pentru alte modalități de a contribui.",
-      thankYou: "Fiecare cent contează și face o diferență enormă în viețile acestor animale. Mulțumim că îți pasă!",
-      psNote: "Dacă vrei să știi mai multe despre un anumit animal, contactează-l direct pe Calin.",
+      helpInstructions:
+        "Poți lăsa o donație în cutia de lângă candy bar sau urmează instrucțiunile simple de mai jos pentru alte modalități de a contribui.",
+      thankYou:
+        "Fiecare cent contează și face o diferență enormă în viețile acestor animale. Mulțumim că îți pasă!",
+      psNote:
+        "Dacă vrei să știi mai multe despre un anumit animal, contactează-l direct pe Calin.",
       age: "Vârsta",
       sex: "Sexul",
-      breed: "Rasa", 
+      breed: "Rasa",
       male: "Mascul",
       female: "Femelă",
-      footerThankYou: "Mulțumim că sprijiniți animalele noastre din plasament!",
-      footerText: "Fiecare donație și distribuire ajută aceste suflete frumoase să își găsească căminele pentru totdeauna.",
+      footerThankYou: "Mulțumim că sprijiniți animalele din foster!",
+      footerText:
+        "Fiecare donație și distribuire ajută aceste suflete frumoase să își găsească căminele pentru totdeauna.",
       dogs: "Câini",
-      cats: "Pisici"
-    },
-    de: {
-      title: "Feuchte Kleine Nasen",
-      mainText: "**Feuchte Kleine Nasen** ist ein Verein, der von Elena geleitet wird, einer Ein-Frau-Macht, die ihr Leben der Hilfe für Tiere in Not widmet.",
-      elenasWork: "Elena sammelt Spenden für das öffentliche Tierheim in Reșița, aber ihre Arbeit geht weit darüber hinaus. Sie rettet verletzte und verlassene Tiere von der Straße, reagiert auf Notfälle, pflegt sie gesund und bietet ihnen ein liebevolles Pflegeheim, bis sie zur Adoption bereit sind.",
-      personalTouch: "Über die Jahre hat uns Elenas unglaubliche Arbeit tief berührt. Wir dachten, unsere Party wäre die perfekte Gelegenheit, das Bewusstsein für ihre Mission zu schärfen, dringend benötigte Gelder zu sammeln und wer weiß – vielleicht einem dieser adorablen Fellknäuel unten ihr Zuhause für immer mit Ihnen zu finden!",
-      animalInfo: "Alle Tiere, die Sie hier sehen, sind sicher und geliebt in Elenas Pflege. Jedes kommt vollständig geimpft mit allen notwendigen Adoptionspapieren bereit.",
-      wantToHelp: "Möchten Sie helfen?",
-      helpInstructions: "Sie können eine Spende in der Box bei der Candy Bar hinterlassen oder den einfachen Anweisungen unten für andere Möglichkeiten zu helfen folgen.",
-      thankYou: "Jeder kleine Betrag macht einen großen Unterschied im Leben dieser Tiere. Danke, dass Ihnen das wichtig ist!",
-      psNote: "Wenn Sie mehr über ein bestimmtes Tier wissen möchten, kontaktieren Sie Calin direkt.",
-      age: "Alter", 
-      sex: "Geschlecht",
-      breed: "Rasse",
-      male: "Männlich",
-      female: "Weiblich", 
-      footerThankYou: "Danke, dass Sie unsere Pflegetiere unterstützen!",
-      footerText: "Jede Spende und jedes Teilen hilft diesen schönen Seelen, ihr Zuhause für immer zu finden.",
-      dogs: "Hunde",
-      cats: "Katzen"
+      cats: "Pisici",
+      donationText:
+        "Contribuția ta asigură hrană, îngrijire medicală și un cămin sigur pentru animalele care au nevoie. Fiecare donatie face diferența!",
+      donationButton: "Donează"
     }
   };
 
   const t = translations[currentLanguage];
 
-  const changeLanguage = (lang) => {
-    setCurrentLanguage(lang);
-  };
+  const changeLanguage = (lang) => setCurrentLanguage(lang);
 
-  // Sample animal data with dogs and cats
+  // Elena Link Component
+  const ElenaLink = ({ children }) => (
+    <a 
+      href="https://www.facebook.com/profile.php?id=100066732424608"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline hover:no-underline"
+      style={{ color: '#1e40af' }}
+    >
+      {children}
+    </a>
+  );
+
+  // Sample animal data
   const dogs = [
-    {
-      id: 1,
-      name: "Scotty",
-      age: "2 years",
-      breed: "Mixed Breed",
-      sex: "male",
-      image: "/assets/dogs/Scotty.jpg"
-    },
-    {
-      id: 2,
-      name: "Linda",
-      age: "2.5 years",
-      breed: "Mix Breed",
-      sex: "female",
-      image: "/assets/dogs/Linda.jpg"
-      
-    },
-    {
-      id: 3,
-      name: "Jolie",
-      age: "8 months",
-      breed: "Mix Breed",
-      sex: "female",
-      image: "/assets/dogs/Jolie.jpg"
-    },
-    {
-      id: 4,
-      name: "Molly",
-      age: "5 years",
-      breed: "Mix Breed",
-      sex: "female",
-      image: "/assets/dogs/Molly.jpg"
-    },
-    {
-      id: 5,
-      name: "Miruna",
-      age: "2 years",
-      breed: "Mix Breed",
-      sex: "female",
-      image: "/assets/dogs/Miruna.jpg"
-    },
-    {
-      id: 6,
-      name: "Alice",
-      age: "1 year 4 and months",
-      breed: "Mix Breed",
-      sex: "female",
-      image: "/assets/dogs/Alice.jpg"
-    },
-    {
-      id: 7,
-      name: "Lara",
-      age: "2 years",
-      breed: "Mix Breed",
-      sex: "female",
-      image: "/assets/dogs/Lara.jpg"
-    }, 
-    {
-      id: 8,
-      name: "Tessa",
-      age: "9 years",
-      breed: "Mix Breed",
-      sex: "female",
-      image: "/assets/dogs/Tessa.jpg"
-    },
-    {
-      id: 11,
-      name: "Patrick",
-      age: "5 years",
-      breed: "Mix Breed",
-      sex: "male",
-      image: "/assets/dogs/Patrick.jpg"
-    }
+    { id: 1, name: "Scotty", age: "2 years", breed: "Mixed Breed", sex: "male", image: "/assets/dogs/Scotty.jpg" },
+    { id: 2, name: "Linda", age: "2.5 years", breed: "Mix Breed", sex: "female", image: "/assets/dogs/Linda.jpg" },
+    { id: 3, name: "Jolie", age: "8 months", breed: "Mix Breed", sex: "female", image: "/assets/dogs/Jolie.jpg" },
+    { id: 4, name: "Molly", age: "5 years", breed: "Mix Breed", sex: "female", image: "/assets/dogs/Molly.jpg" },
+    { id: 5, name: "Miruna", age: "2 years", breed: "Mix Breed", sex: "female", image: "/assets/dogs/Miruna.jpg" },
+    { id: 6, name: "Alice", age: "1 year 4 and months", breed: "Mix Breed", sex: "female", image: "/assets/dogs/Alice.jpg" },
+    { id: 7, name: "Lara", age: "2 years", breed: "Mix Breed", sex: "female", image: "/assets/dogs/Lara.jpg" },
+    { id: 8, name: "Tessa", age: "9 years", breed: "Mix Breed", sex: "female", image: "/assets/dogs/Tessa.jpg" },
+    { id: 11, name: "Patrick", age: "5 years", breed: "Mix Breed", sex: "male", image: "/assets/dogs/Patrick.jpg" }
   ];
 
   const cats = [
-    {
-      id: 9,
-      name: "Portocala",
-      age: "3 months",
-      breed: "Domestic Shorthair",
-      sex: "male",
-      image: "/assets/cats/Portocala.jpg"
-    },
-    {
-      id: 10,
-      name: "Doro",
-      age: "4 weeks",
-      breed: "Domestic Shorthair",
-      sex: "female",
-      image: "/assets/cats/Doro.jpg"
-    },
-    {
-      id: 12,
-      name: "Patty",
-      age: "4 weeks",
-      breed: "Domestic Shorthair",
-      sex: "female",
-      image: "/assets/cats/Patty.jpg"
-    },
-    {
-      id: 13,
-      name: "Siana",
-      age: "3 months",
-      breed: "Domestic Shorthair",
-      sex: "female",
-      image: "/assets/cats/Siana.jpg"
-    },
-    {
-      id: 14,
-      name: "Mura",
-      age: "3 years",
-      breed: "Domestic Shorthair",
-      sex: "male",
-      image: "/assets/cats/Mura.jpg"
-    },{
-      id: 15,
-      name: "Ofelia",
-      age: "2 years 4 months",
-      breed: "Domestic Shorthair",
-      sex: "female",
-      image: "/assets/cats/Ofelia.jpg"
-    },{
-      id: 16,
-      name: "Coco",
-      age: "11 months",
-      breed: "Domestic Shorthair",
-      sex: "female",
-      image: "/assets/cats/Coco.jpg"
-    },
-    
+    { id: 9, name: "Portocala", age: "3 months", breed: "Domestic Shorthair", sex: "male", image: "/assets/cats/Portocala.jpg" },
+    { id: 10, name: "Doro", age: "4 weeks", breed: "Domestic Shorthair", sex: "female", image: "/assets/cats/Doro.jpg" },
+    { id: 12, name: "Patty", age: "4 weeks", breed: "Domestic Shorthair", sex: "female", image: "/assets/cats/Patty.jpg" },
+    { id: 13, name: "Siana", age: "3 months", breed: "Domestic Shorthair", sex: "female", image: "/assets/cats/Siana.jpg" },
+    { id: 14, name: "Mura", age: "3 years", breed: "Domestic Shorthair", sex: "male", image: "/assets/cats/Mura.jpg" },
+    { id: 15, name: "Ofelia", age: "2 years 4 months", breed: "Domestic Shorthair", sex: "female", image: "/assets/cats/Ofelia.jpg" },
+    { id: 16, name: "Coco", age: "11 months", breed: "Domestic Shorthair", sex: "female", image: "/assets/cats/Coco.jpg" }
   ];
 
   const currentAnimals = animalType === 'dogs' ? dogs : cats;
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#fcedd2' }}>
-      {/* Language Selector - Top Left */}
+      {/* Language Selector */}
       <div className="absolute top-4 left-4 z-10">
         <div className="flex space-x-1">
-          {['en', 'ro', 'de'].map((lang) => (
+          {['en', 'ro'].map((lang) => (
             <button
               key={lang}
               onClick={() => changeLanguage(lang)}
               className={`px-3 py-1 text-xs font-medium rounded-full transition-all ${
-                currentLanguage === lang 
-                  ? 'text-white' 
-                  : 'text-white opacity-70 hover:opacity-100'
+                currentLanguage === lang ? 'text-white' : 'text-white opacity-70 hover:opacity-100'
               }`}
-              style={{ 
+              style={{
                 backgroundColor: currentLanguage === lang ? '#2F4A3B' : 'rgba(47, 74, 59, 0.7)'
               }}
             >
@@ -251,62 +118,83 @@ const App = () => {
         </div>
       </div>
 
-      {/* Header with Logo */}
+      {/* Header */}
       <header className="text-center py-8 px-4 pt-16">
         <div className="mb-6">
-          <div className="w-48 h-48 mx-auto mb-4 rounded-3xl overflow-hidden" style={{ backgroundColor: '#F5F1E8' }}>
-            <img 
+          <div
+            className="w-48 h-48 mx-auto mb-4 rounded-3xl overflow-hidden"
+            style={{ backgroundColor: '#F5F1E8' }}
+          >
+            <img
               src="https://i.imgur.com/QmkG7oz.png?v=1"
               alt="Wet Little Noses Logo"
               className="w-full h-full object-cover"
-              onLoad={() => console.log('Logo loaded successfully!')}
-              onError={(e) => {
-                console.log('Logo failed to load, trying without cache param...');
-                e.target.src = "https://i.imgur.com/QmkG7oz.png?v=2";
-                e.target.onerror = () => {
-                  console.log('Logo still failing, using fallback');
-                  e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F5F1E8'/%3E%3Ctext x='50' y='50' text-anchor='middle' dy='0.35em' font-size='30'%3E🐾%3C/text%3E%3C/svg%3E";
-                };
-              }}
             />
           </div>
         </div>
-        
-        {/* New Wedding Party Description */}
+
         <div className="max-w-2xl mx-auto text-left space-y-4 mb-8">
+          {/* Main Text */}
           <p className="text-sm" style={{ color: '#2F4A3B' }}>
-            <strong>{t.mainText.replace(/\*\*(.*?)\*\*/g, '$1')}</strong>
-          </p>
-          
-          <p className="text-sm" style={{ color: '#2F4A3B' }}>
-            {t.elenasWork}
-          </p>
-
-          <div className="text-center">
-            <span className="text-lg">🐾</span>
-          </div>
-
-          <p className="text-sm" style={{ color: '#2F4A3B' }}>
-            {t.personalTouch}
+            {currentLanguage === 'en' ? (
+              <>
+                <strong>Wet Little Noses</strong> is an association run by <ElenaLink>Elena</ElenaLink>, a one-woman powerhouse who dedicates her life to helping animals in need.
+              </>
+            ) : (
+              <>
+                <strong>Wet Little Noses</strong> este o asociație condusă de <ElenaLink>Elena</ElenaLink>, o super volutara care luptă zilnic pentru animalele abandonate și în nevoie.
+              </>
+            )}
           </p>
 
-          <div className="text-center">
-            <span className="text-lg">🐾</span>
-          </div>
-
+          {/* Elena's Work */}
           <p className="text-sm" style={{ color: '#2F4A3B' }}>
-            {t.animalInfo}
+            {currentLanguage === 'en' ? (
+              <>
+                <ElenaLink>Elena</ElenaLink> collects donations for the Reșița public animal shelter, but her work goes far beyond that. She rescues injured and abandoned animals from the streets, responds to emergencies, nurses them back to health, and provides them with a loving foster home until they're ready for adoption.
+              </>
+            ) : (
+              <>
+                <ElenaLink>Elena</ElenaLink> colectează donații pentru adăpostul public de animale din Reșița, însă munca ei nu se oprește aici. Zi de zi intervine în situații de urgență pentru a ajuta animale, pe care le salvează de pe străzi, le îngrijește și le oferă un refugiu plin de dragoste până își găsesc o casă.
+              </>
+            )}
+          </p>
+
+          <div className="text-center"><span className="text-lg">🐾</span></div>
+
+          {/* Personal Touch */}
+          <p className="text-sm" style={{ color: '#2F4A3B' }}>
+            {currentLanguage === 'en' ? (
+              <>
+                I've been working alongside <ElenaLink>Elena</ElenaLink> for several years now, and in that time I've watched her single-handedly find loving homes for dozens of animals. This project has become incredibly close to my heart, so our party felt like the perfect opportunity to share her mission, raise some much-needed funds, and hopefully help one of these sweet souls find their forever family with you!
+              </>
+            ) : (
+              <>
+               De câțiva ani îi sunt alături <ElenaLink>Elenei</ElenaLink> și am văzut personal cum a salvat și găsit familii pentru zeci de animale. Acest proiect mi-a devenit extrem de apropiat, așa că petrecerea noastră ni s-a părut ocazia perfectă să împărtășim misiunea ei, să strângem fondurile necesare și, sperăm, să ajutăm unul dintre aceste suflete drăguțe să își găsească familia pentru totdeauna!
+              </>
+            )}
+          </p>
+
+          <div className="text-center"><span className="text-lg">🐾</span></div>
+
+          {/* Animal Info */}
+          <p className="text-sm" style={{ color: '#2F4A3B' }}>
+            {currentLanguage === 'en' ? (
+              <>
+                All the animals you see here are currently safe and loved in <ElenaLink>Elena's</ElenaLink> foster care. If you would consider offering one of them their forever home, each comes fully vaccinated with all necessary adoption papers ready to go.
+              </>
+            ) : (
+              <>
+                Toate animalele pe care le vedeți aici sunt în siguranță și iubite în foster-ul <ElenaLink>Elenei</ElenaLink>. Daca considerati sa oferiti un camin, fiecare animalut vine complet vaccinat cu toate actele de adopție necesare.
+              </>
+            )}
           </p>
 
           <div className="text-sm" style={{ color: '#2F4A3B' }}>
             <p className="font-bold">{t.wantToHelp}</p>
             <p>{t.helpInstructions}</p>
           </div>
-
-          <p className="text-sm font-medium" style={{ color: '#8B6914' }}>
-            {t.thankYou} 🐾
-          </p>
-
+          <p className="text-sm font-medium" style={{ color: '#8B6914' }}>{t.thankYou} 🐾</p>
           <p className="text-xs italic" style={{ color: '#2F4A3B' }}>
             <strong>PS:</strong> {t.psNote}
           </p>
@@ -318,26 +206,18 @@ const App = () => {
             <button
               onClick={() => setAnimalType('dogs')}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                animalType === 'dogs'
-                  ? 'text-white shadow-md'
-                  : 'text-white opacity-70 hover:opacity-100'
+                animalType === 'dogs' ? 'text-white shadow-md' : 'text-white opacity-70 hover:opacity-100'
               }`}
-              style={{ 
-                backgroundColor: animalType === 'dogs' ? '#D2691E' : 'transparent'
-              }}
+              style={{ backgroundColor: animalType === 'dogs' ? '#D2691E' : 'transparent' }}
             >
               🐕 {t.dogs}
             </button>
             <button
               onClick={() => setAnimalType('cats')}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                animalType === 'cats'
-                  ? 'text-white shadow-md'
-                  : 'text-white opacity-70 hover:opacity-100'
+                animalType === 'cats' ? 'text-white shadow-md' : 'text-white opacity-70 hover:opacity-100'
               }`}
-              style={{ 
-                backgroundColor: animalType === 'cats' ? '#D2691E' : 'transparent'
-              }}
+              style={{ backgroundColor: animalType === 'cats' ? '#D2691E' : 'transparent' }}
             >
               🐱 {t.cats}
             </button>
@@ -350,64 +230,40 @@ const App = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center items-start">
             {currentAnimals.map((animal) => (
-              <div 
+              <div
                 key={animal.id}
                 className="rounded-2xl shadow-lg overflow-hidden w-full max-w-sm relative h-full flex flex-col"
-                style={{ 
+                style={{
                   backgroundColor: 'white',
                   border: '4px solid #8B4513',
                   borderRadius: '20px',
-                  boxShadow: `
-                    0 4px 8px rgba(0,0,0,0.1),
-                    inset 0 0 0 2px #CD853F,
-                    inset 0 0 0 4px #8B4513,
-                    0 0 0 1px #D2691E
-                  `
+                  boxShadow: `0 4px 8px rgba(0,0,0,0.1), inset 0 0 0 2px #CD853F, inset 0 0 0 4px #8B4513, 0 0 0 1px #D2691E`
                 }}
               >
-                {/* Rope texture overlay */}
-                <div 
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    borderRadius: '16px',
-                    background: `
-                      repeating-linear-gradient(
-                        45deg,
-                        transparent,
-                        transparent 2px,
-                        rgba(139, 69, 19, 0.1) 2px,
-                        rgba(139, 69, 19, 0.1) 4px
-                      )
-                    `,
-                    zIndex: 1
-                  }}
+                <div className="absolute inset-0 pointer-events-none"
+                     style={{
+                       borderRadius: '16px',
+                       background: `repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(139, 69, 19, 0.1) 2px, rgba(139, 69, 19, 0.1) 4px)`,
+                       zIndex: 1
+                     }}
                 />
 
-                {/* Animal Image */}
                 <div className="relative overflow-hidden" style={{ zIndex: 2 }}>
-                  <img 
-                    src={animal.image} 
+                  <img
+                    src={animal.image}
                     alt={animal.name}
                     className="w-full h-56 object-cover"
                     onError={(e) => {
-                      e.target.src = animalType === 'dogs' ? "https://placedog.net/400/300?random" : "https://placekitten.com/400/300?random";
+                      e.target.src = animalType === 'dogs' ? 'https://placedog.net/400/300?random' : 'https://placekitten.com/400/300?random';
                     }}
                   />
-                  <div 
-                    className="absolute top-3 right-3 p-2 rounded-full"
-                    style={{ backgroundColor: 'rgba(47, 74, 59, 0.9)' }}
-                  >
+                  <div className="absolute top-3 right-3 p-2 rounded-full" style={{ backgroundColor: 'rgba(47, 74, 59, 0.9)' }}>
                     <Heart className="w-4 h-4 text-white" fill="currentColor" />
                   </div>
                 </div>
 
-                {/* Animal Info */}
                 <div className="p-4 relative flex-1 flex flex-col" style={{ zIndex: 2 }}>
-                  <h2 className="text-xl font-bold mb-3" style={{ color: '#2F4A3B' }}>
-                    {animal.name}
-                  </h2>
-                  
-                  {/* Animal Details Grid */}
+                  <h2 className="text-xl font-bold mb-3" style={{ color: '#2F4A3B' }}>{animal.name}</h2>
                   <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
                     <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-2" style={{ color: '#D2691E' }} />
@@ -429,35 +285,32 @@ const App = () => {
         </div>
       </main>
 
-      {/* GoFundMe Embed */}
+      {/* Donation Card */}
       <div className="px-4 pb-8">
         <div className="max-w-2xl mx-auto">
-          <div 
-            className="gfm-embed" 
-            data-url="https://www.gofundme.com/f/gn7rvm-foster-animals/widget/large"
-            style={{ minHeight: '400px', backgroundColor: '#f9f9f9', borderRadius: '8px', padding: '20px' }}
+          <div className="p-6 rounded-2xl shadow-lg flex flex-col items-center text-center"
+               style={{ backgroundColor: 'white', border: '3px solid #D2691E' }}
           >
-            <p style={{ textAlign: 'center', color: '#666' }}>Loading donation widget...</p>
+            <h3 className="text-xl font-bold mb-2" style={{ color: '#2F4A3B' }}>
+              {currentLanguage === 'en' ? (
+                <>Help <ElenaLink>Elena</ElenaLink> Give Them a Second Chance</>
+              ) : (
+                <>Oferă-le o a doua șansă alături de <ElenaLink>Elena</ElenaLink></>
+              )}
+            </h3>
+            <p className="text-sm mb-4" style={{ color: '#2F4A3B' }}>{t.donationText}</p>
+            <a
+              href="https://gofund.me/f7480eeae"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 rounded-full text-white font-medium transition-all"
+              style={{ backgroundColor: '#D2691E' }}
+            >
+              {t.donationButton}
+            </a>
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="text-center py-8 px-4">
-        <div className="max-w-md mx-auto">
-          <div className="mb-4">
-            <div className="w-8 h-8 mx-auto rounded-full flex items-center justify-center" style={{ backgroundColor: '#2F4A3B' }}>
-              <span className="text-white text-sm">🐾</span>
-            </div>
-          </div>
-          <p className="text-sm mb-2" style={{ color: '#2F4A3B' }}>
-            {t.footerThankYou}
-          </p>
-          <p className="text-xs" style={{ color: '#8B6914' }}>
-            {t.footerText}
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
