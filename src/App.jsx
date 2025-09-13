@@ -148,6 +148,14 @@ const App = () => {
       breed: "Mix Breed",
       sex: "female",
       image: "/assets/dogs/Tessa.jpg"
+    },
+    {
+      id: 11,
+      name: "Patrick",
+      age: "5 years",
+      breed: "Mix Breed",
+      sex: "male",
+      image: "/assets/dogs/Patrick.jpg"
     }
   ];
 
@@ -167,14 +175,6 @@ const App = () => {
       breed: "Domestic Shorthair",
       sex: "female",
       image: "/assets/cats/Doro.jpg"
-    },
-    {
-      id: 11,
-      name: "Ramis",
-      age: "4 weeks",
-      breed: "Domestic Shorthair",
-      sex: "male",
-      image: "/assets/cats/Rami.jpg"
     },
     {
       id: 12,
