@@ -90,8 +90,7 @@ const App = () => {
       age: "2 years",
       breed: "Mixed Breed",
       sex: "male",
-      image: "/assets/dogs/Scotty.jpg",
-      description: "Scotty is a playful and dog who loves to be around people. He enjoys long walks and is great with kids."
+      image: "/assets/dogs/Scotty.jpg"
     },
     {
       id: 2,
@@ -99,56 +98,121 @@ const App = () => {
       age: "2.5 years",
       breed: "Mix Breed",
       sex: "female",
-      image: "/assets/dogs/Linda.jpg",
-      description: "Luna is an energetic puppy who's always ready for an adventure. She's incredibly smart and loves learning new tricks."
+      image: "/assets/dogs/Linda.jpg"
+      
+    },
+    {
+      id: 3,
+      name: "Jolie",
+      age: "8 months",
+      breed: "Mix Breed",
+      sex: "female",
+      image: "/assets/dogs/Jolie.jpg"
+    },
+    {
+      id: 4,
+      name: "Molly",
+      age: "5 years",
+      breed: "Mix Breed",
+      sex: "female",
+      image: "/assets/dogs/Molly.jpg"
+    },
+    {
+      id: 5,
+      name: "Miruna",
+      age: "2 years",
+      breed: "Mix Breed",
+      sex: "female",
+      image: "/assets/dogs/Miruna.jpg"
+    },
+    {
+      id: 6,
+      name: "Alice",
+      age: "1 year 4 and months",
+      breed: "Mix Breed",
+      sex: "female",
+      image: "/assets/dogs/Alice.jpg"
+    },
+    {
+      id: 7,
+      name: "Lara",
+      age: "2 years",
+      breed: "Mix Breed",
+      sex: "female",
+      image: "/assets/dogs/Lara.jpg"
+    }, 
+    {
+      id: 8,
+      name: "Tessa",
+      age: "9 years",
+      breed: "Mix Breed",
+      sex: "female",
+      image: "/assets/dogs/Tessa.jpg"
     }
   ];
 
   const cats = [
     {
-      id: 7,
+      id: 9,
       name: "Portocala",
       age: "3 months",
       breed: "Domestic Shorthair",
       sex: "male",
-      image: "/assets/cats/Portocala.jpg",
-      description: "Whiskers is a majestic and gentle giant who loves to watch birds from the window. He's calm, affectionate, and perfect for a quiet home."
+      image: "/assets/cats/Portocala.jpg"
     },
     {
-      id: 8,
+      id: 10,
       name: "Doro",
       age: "4 weeks",
       breed: "Domestic Shorthair",
       sex: "female",
-      image: "/assets/cats/Doro.jpg",
-      description: "Mittens is a playful kitten who loves chasing toy mice and cuddling in warm spots. She's social and would do well with other cats."
+      image: "/assets/cats/Doro.jpg"
     },
     {
-      id: 9,
+      id: 11,
       name: "Ramis",
       age: "4 weeks",
       breed: "Domestic Shorthair",
       sex: "male",
-      image: "/assets/cats/Rami.jpg",
-      description: "Shadow is a sophisticated senior cat who enjoys quiet companionship. He loves gentle pets and would thrive in a peaceful environment."
+      image: "/assets/cats/Rami.jpg"
     },
     {
-      id: 10,
+      id: 12,
       name: "Patty",
       age: "4 weeks",
       breed: "Domestic Shorthair",
       sex: "female",
-      image: "/assets/cats/Patty.jpg",
-      description: "Princess is as elegant as her name suggests. She enjoys being pampered and loves to lounge in sunny spots around the house."
+      image: "/assets/cats/Patty.jpg"
     },
     {
-      id: 11,
+      id: 13,
       name: "Siana",
       age: "3 months",
       breed: "Domestic Shorthair",
       sex: "female",
-      image: "/assets/cats/Siana.jpg",
-      description: "Oliver is an adventurous cat who loves exploring and climbing. He's friendly, curious, and would make a wonderful addition to an active household."
+      image: "/assets/cats/Siana.jpg"
+    },
+    {
+      id: 14,
+      name: "Mura",
+      age: "3 years",
+      breed: "Domestic Shorthair",
+      sex: "male",
+      image: "/assets/cats/Mura.jpg"
+    },{
+      id: 15,
+      name: "Ofelia",
+      age: "2 years 4 months",
+      breed: "Domestic Shorthair",
+      sex: "female",
+      image: "/assets/cats/Ofelia.jpg"
+    },{
+      id: 16,
+      name: "Coco",
+      age: "11 months",
+      breed: "Domestic Shorthair",
+      sex: "female",
+      image: "/assets/cats/Coco.jpg"
     },
     
   ];
