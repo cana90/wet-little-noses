@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Calendar, User, Palette, CreditCard, Building2 } from 'lucide-react';
+import { Heart, Calendar, User, Palette } from 'lucide-react';
 
 const App = () => {
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -37,11 +37,6 @@ const App = () => {
       breed: "Breed",
       male: "Male",
       female: "Female",
-      donate: "Support Our Animals",
-      donateTitle: "Help Us Care for These Beautiful Souls",
-      donateDesc: "Your donation goes directly to food, medical care, and shelter for our foster animals.",
-      bankDetails: "Bank Transfer",
-      paypalDetails: "PayPal",
       footerThankYou: "Thank you for supporting our foster animals!",
       footerText: "Every donation and share helps these beautiful souls find their forever homes.",
       dogs: "Dogs",
@@ -62,11 +57,6 @@ const App = () => {
       breed: "Rasa", 
       male: "Mascul",
       female: "Femelă",
-      donate: "Sprijină Animalele Noastre",
-      donateTitle: "Ajută-ne să Avem Grijă de Aceste Suflete Frumoase",
-      donateDesc: "Donația ta merge direct către hrană, îngrijire medicală și adăpost pentru animalele noastre.",
-      bankDetails: "Transfer Bancar",
-      paypalDetails: "PayPal", 
       footerThankYou: "Mulțumim că sprijiniți animalele noastre din plasament!",
       footerText: "Fiecare donație și distribuire ajută aceste suflete frumoase să își găsească căminele pentru totdeauna.",
       dogs: "Câini",
@@ -87,11 +77,6 @@ const App = () => {
       breed: "Rasse",
       male: "Männlich",
       female: "Weiblich", 
-      donate: "Unterstützen Sie Unsere Tiere",
-      donateTitle: "Helfen Sie uns, diese schönen Seelen zu versorgen",
-      donateDesc: "Ihre Spende geht direkt an Futter, medizinische Versorgung und Unterkunft für unsere Pflegetiere.",
-      bankDetails: "Banküberweisung",
-      paypalDetails: "PayPal",
       footerThankYou: "Danke, dass Sie unsere Pflegetiere unterstützen!",
       footerText: "Jede Spende und jedes Teilen hilft diesen schönen Seelen, ihr Zuhause für immer zu finden.",
       dogs: "Hunde",
@@ -440,81 +425,22 @@ const App = () => {
                 </div>
               </div>
             ))}
-            
-            {/* Donation Tile */}
-            <div 
-              className="rounded-2xl shadow-lg overflow-hidden w-full max-w-sm relative h-full flex flex-col"
-              style={{ 
-                backgroundColor: 'white', 
-                border: '4px dashed #D2691E',
-                borderRadius: '20px',
-                boxShadow: `
-                  0 4px 8px rgba(0,0,0,0.1),
-                  inset 0 0 0 2px #F4A460,
-                  0 0 0 1px #CD853F
-                `
-              }}
-            >
-              {/* Subtle pattern overlay for donation tile */}
-              <div 
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  borderRadius: '16px',
-                  background: `
-                    radial-gradient(circle at 25% 25%, rgba(210, 105, 30, 0.05) 2px, transparent 2px),
-                    radial-gradient(circle at 75% 75%, rgba(210, 105, 30, 0.05) 2px, transparent 2px)
-                  `,
-                  backgroundSize: '20px 20px',
-                  zIndex: 1
-                }}
-              />
-              
-              <div className="p-6 text-center relative flex-1 flex flex-col justify-center" style={{ zIndex: 2 }}>
-                <div className="mb-4">
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: '#2F4A3B' }}>
-                    <CreditCard className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                
-                <h2 className="text-xl font-bold mb-3" style={{ color: '#2F4A3B' }}>
-                  {t.donate}
-                </h2>
-                
-                <p className="text-sm mb-4" style={{ color: '#2F4A3B' }}>
-                  {t.donateDesc}
-                </p>
-                
-                {/* Bank Details */}
-                <div className="mb-4 p-3 rounded-lg" style={{ backgroundColor: '#F5F1E8' }}>
-                  <div className="flex items-center justify-center mb-2">
-                    <Building2 className="w-4 h-4 mr-2" style={{ color: '#D2691E' }} />
-                    <span className="text-sm font-medium" style={{ color: '#2F4A3B' }}>
-                      {t.bankDetails}
-                    </span>
-                  </div>
-                  <div className="text-xs" style={{ color: '#2F4A3B' }}>
-                    <p>IBAN: RO12 BANK 1234 5678 9012 3456</p>
-                    <p>Account: Wet Little Noses</p>
-                  </div>
-                </div>
-                
-                {/* PayPal */}
-                <div className="p-3 rounded-lg" style={{ backgroundColor: '#F5F1E8' }}>
-                  <div className="flex items-center justify-center mb-2">
-                    <CreditCard className="w-4 h-4 mr-2" style={{ color: '#D2691E' }} />
-                    <span className="text-sm font-medium" style={{ color: '#2F4A3B' }}>
-                      {t.paypalDetails}
-                    </span>
-                  </div>
-                  <div className="text-xs" style={{ color: '#2F4A3B' }}>
-                    <p>donate@wetlittlenoses.ro</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </main>
+
+      {/* GoFundMe Embed */}
+      <div className="px-4 pb-8">
+        <div className="max-w-2xl mx-auto">
+          <div 
+            className="gfm-embed" 
+            data-url="https://www.gofundme.com/f/gn7rvm-foster-animals/widget/large"
+            style={{ minHeight: '400px', backgroundColor: '#f9f9f9', borderRadius: '8px', padding: '20px' }}
+          >
+            <p style={{ textAlign: 'center', color: '#666' }}>Loading donation widget...</p>
+          </div>
+        </div>
+      </div>
 
       {/* Footer */}
       <footer className="text-center py-8 px-4">
